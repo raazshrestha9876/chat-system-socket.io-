@@ -36,7 +36,7 @@ const LoginForm: React.FC = () => {
   async function onSubmit(values: z.infer<typeof loginSchema>) {
     const data = await AuthService.loginService(values);
     const { token } = data;
-    localStorage.setItem('token', token);
+    localStorage.setItem('token', token);;
     navigate('/chat');
   }
 
@@ -53,7 +53,7 @@ const LoginForm: React.FC = () => {
           <CardContent className="space-y-4">
             <FormField
               control={form.control}
-              name="username"
+              name="user"
               render={({ field }) => (
                 <FormItem>
                   <FormLabel>Username</FormLabel>
