@@ -31,6 +31,7 @@ const LoginForm: React.FC = () => {
   const form = useForm<z.infer<typeof loginSchema>>({
     resolver: zodResolver(loginSchema),
   });
+  // Form submission handler
 
   async function onSubmit(values: z.infer<typeof loginSchema>) {
     const data = await AuthService.loginService(values);
